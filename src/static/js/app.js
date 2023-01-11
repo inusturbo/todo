@@ -51,6 +51,7 @@ function TodoListCard() {
 
     return (
         <React.Fragment>
+            <h1 className='text-center'>MA Shanpeng 2211415 Todo List</h1>
             <AddItemForm onNewItem={onNewItem} />
             {items.length === 0 && (
                 <p className="text-center">No items yet! Add one above!</p>
@@ -90,6 +91,7 @@ function AddItemForm({ onNewItem }) {
     };
 
     return (
+
         <Form onSubmit={submitNewItem}>
             <InputGroup className="mb-3">
                 <Form.Control
@@ -137,6 +139,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
     };
 
     return (
+
         <Container fluid className={`item ${item.completed && 'completed'}`}>
             <Row>
                 <Col xs={1} className="text-center">
@@ -153,9 +156,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     >
                         <i
                             onClick={toggleCompletion}
-                            className={`far ${
-                                item.completed ? 'fa-check-square' : 'fa-square'
-                            }`}
+                            className={`far ${item.completed ? 'fa-check-square' : 'fa-square'
+                                }`}
                         />
                     </Button>
                 </Col>
@@ -176,5 +178,4 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
         </Container>
     );
 }
-
 ReactDOM.render(<App />, document.getElementById('root'));
